@@ -9,6 +9,7 @@ namespace DemoWebApp.Tests
         private const string HomeUrl = "http://localhost:40077/";
 
         [Fact]
+        [Trait("Category","Smoke")]
         public void StartApplication()
         {
             using (IWebDriver driver = new FirefoxDriver())
@@ -16,6 +17,9 @@ namespace DemoWebApp.Tests
                 driver.Manage().Window.Maximize();
 
                 driver.Navigate().GoToUrl(HomeUrl);
+
+                driver.FindElement(By.Id("startApplication")).Click();
+
             }
         }
 
