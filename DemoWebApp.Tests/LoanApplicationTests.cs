@@ -39,7 +39,9 @@ namespace DemoWebApp.Tests
                 driver.FindElement(By.Id("TermsAcceptance")).Click();
                 driver.FindElement(By.CssSelector(".btn.btn-primary")).Click();
 
-
+                IWebElement ConfirmationNameSpan = driver.FindElement(By.Id("firstName"));
+                string confirmationName = ConfirmationNameSpan.Text;
+                Assert.Equal("Rashiid", confirmationName);
 
             }
         }
